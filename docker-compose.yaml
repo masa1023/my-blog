@@ -1,0 +1,12 @@
+version: '3'
+services:
+  app:
+    build: .
+    image: gatsby-contentful
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./:/code
+    tty: true
+    stdin_open: true
+    command: ./node_modules/gatsby/node_modules/.bin/gatsby develop -H 0.0.0.0 -p 8000
